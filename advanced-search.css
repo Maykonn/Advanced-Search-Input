@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#advanced-search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%; /* Adjusted to a larger max width */
+    margin: auto;
+    position: relative; /* Ensure relative positioning for internal elements */
+}
+
+.search-bar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#search-input {
+    flex: 1 1 80%; /* Ensure it takes 80% of the horizontal space */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#help-icon {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button-group {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.action-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+#help-container {
+    display: none; /* Keep it hidden initially */
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: absolute;
+    top: calc(100% + 10px); /* Position it below the search bar and buttons */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Match the width of the search container */
+    z-index: 1000; /* Below autocomplete suggestions */
+    padding: 15px; /* Padding for content */
+    box-sizing: border-box; /* Include padding and border in width */
+    font-size: 14px; /* Smaller font size for readability */
+}
+
+.help-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between sections */
+}
+
+.help-header {
+    font-weight: bold;
+    font-size: 16px; /* Slightly larger font for headers */
+    margin-bottom: 8px; /* Space below header */
+}
+
+/* Modernize the list items */
+.help-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.help-list li {
+    padding: 5px 0; /* Space between list items */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Styling for clickable items */
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Styling for informative items */
+.informative {
+    cursor: default;
+    color: #000; /* Default color */
+}
+
+/* Styling for autocomplete suggestions container */
+.ui-autocomplete {
+    position: absolute;
+    z-index: 1001; /* Higher than the help container */
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-height: 200px; /* Limit the height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 100%; /* Match the width of the search input */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.ui-menu-item {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.ui-menu-item:hover {
+    background-color: #f0f0f0; /* Subtle background change on hover */
+    color: #007bff; /* Change text color on hover */
+}
+
+/* Debug container styles */
+#debug-container {
+    margin-top: 20px;
+    white-space: pre-wrap;
+    background: #f9f9f9;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+#debug-container strong {
+    color: #d9534f; /* Highlight color for important text */
+    display: block; /* Ensure titles are block elements */
+    margin-bottom: 5px; /* Space below titles */
+}
+
+#debug-container pre {
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    overflow: auto;
+    text-align: left; /* Ensure text inside <pre> is left-aligned */
+    margin: 0; /* Remove default margin */
+    white-space: pre-wrap; /* Ensure text wraps within the container */
+}
+
+#debug-container .reserved-word {
+    color: #d9534f; /* Color for reserved words */
+    font-weight: bold; /* Optional: make reserved words bold */
+}
