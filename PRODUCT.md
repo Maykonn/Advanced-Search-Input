@@ -4,6 +4,8 @@
 
 The Advanced Search Input package is a powerful tool designed to enhance the search capabilities of web applications. It provides users with an intuitive and flexible way to create complex searches without requiring technical knowledge. This document outlines the key features and benefits of implementing this package in your application.
 
+Back to [HOME](https://github.com/Maykonn/Advanced-Search-Input).
+
 ## Key Features
 
 ### User-Friendly Search Interface
