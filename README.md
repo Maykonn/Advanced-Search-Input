@@ -4,6 +4,8 @@
 The Advanced Search Input package is a powerful tool designed to enhance the search capabilities of web applications. It provides users with an intuitive and flexible way to create complex searches without requiring technical knowledge. Whether you're building an e-commerce platform, a content management system, or a complex enterprise application, this package offers a sophisticated search solution adaptable to your unique needs.
 
 ## 🚀 Key Features
+**Read the [Comprehensive Feature Guide](#https://github.com/Maykonn/Advanced-Search-Input/blob/master/PRODUCT.md) for detailed non-technical documentation**
+
 ### FOR USERS
 - **Smart Search Bar**: Effortlessly build complex queries in a single input field
 - **Intelligent Suggestions**: Get real-time suggestions as you type
@@ -22,18 +24,18 @@ The Advanced Search Input package is a powerful tool designed to enhance the sea
 - **API Integration**: Easly connect with your backend search API
 
 ## 📚 Table of Contents
-Installation
-Basic Setup
-Configuration
-Detailed Feature Guide
-Customization
-API Integration
-Advanced Usage
-Executing Tests
-Complete Example
-Benefits
-Contributing
-License
+[Installation](#Installation)
+[Basic Setup](#Basic Setup)
+[Configuration](#Configuration)
+[Detailed Feature Guide](#Detailed Feature Guide)
+[Customization](#Customization)
+[API Integration](#API Integration)
+[Advanced Usage](#Advanced Usage)
+[Executing Tests](#Executing Tests)
+[Complete Example](#Complete Example)
+[Benefits](#Benefits)
+[Contributing](#Contributing)
+[License](#License)
 
 ## 📦 Installation
 Include the necessary files in your HTML:
@@ -484,7 +486,7 @@ If you encounter any issues or have questions about using the Advanced Search In
 ## 🙏 Acknowledgements
 We would like to thank all the contributors who have helped to make this project better. Your time and effort are greatly appreciated!
 
-<p align="center"> Made with ❤️ by <a href="https://github.com/Maykonn">Maykonn</a> </p>
+<p align="center"> Made with ❤️ by <a href="https://www.linkedin.com/in/maykonnwcandido">Maykonn</a> </p>
 <p align="center"> <a href="#advanced-search-input">Back to top</a> </p>
 
 
