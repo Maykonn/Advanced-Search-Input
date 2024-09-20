@@ -24,18 +24,18 @@ Read the [Comprehensive Feature Guide](https://github.com/Maykonn/Advanced-Searc
 - **API Integration**: Easly connect with your backend search API
 
 ## 📚 Table of Contents
-- [Installation](#Installation)
-- [Basic Setup](#Basic-Setup)
-- [Configuration](#Configuration)
-- [Detailed Feature Guide](#Detailed-Feature-Guide)
-- [Customization](#Customization)
-- [API Integration](#API-Integration)
-- [Advanced Usage](#Advanced-Usage)
-- [Executing Tests](#Executing-Tests)
-- [Complete Example](#Complete-Example)
-- [Benefits](#Benefits)
-- [Contributing](#Contributing)
-- [License](#License)
+- [Installation](#-Installation)
+- [Basic Setup](#-Basic-Setup)
+- [Configuration](#-Configuration)
+- [Detailed Feature Guide](#-Detailed-Feature-Guide)
+- [Customization](#-Customization)
+- [API Integration](#-API-Integration)
+- [Advanced Usage](#-Advanced-Usage)
+- [Executing Tests](#-Executing-Tests)
+- [Complete Example](#-Complete-Example)
+- [Benefits](#-Benefits)
+- [Contributing](#-Contributing)
+- [License](#-License)
 
 ## 📦 Installation
 Include the necessary files in your HTML:
