@@ -23,6 +23,8 @@ Read the [Comprehensive Feature Guide](https://github.com/Maykonn/Advanced-Searc
 - **Comprehensive Debugging**: Test mode and extensive logging for easy troubleshooting
 - **API Integration**: Easly connect with your backend search API
 
+![2024-09-20_20-42](https://github.com/user-attachments/assets/546e152f-b751-49f9-ada3-b33913d94a03)
+
 ## 📚 Table of Contents
 - [Installation](#-Installation)
 - [Basic Setup](#-Basic-Setup)
