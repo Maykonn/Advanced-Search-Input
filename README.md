@@ -369,83 +369,107 @@ Here's a comprehensive example showcasing various features of the Advanced Searc
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Search Example</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="path/to/advanced-search.css">
-    <script src="path/to/advanced-search.js"></script>
-    <script src="path/to/advanced-search-tests.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Search</title>
+<!-- jQuery and jQuery UI for autocomplete and datepicker functionality -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="advanced-search.css">
+<script src="advanced-search.js"></script>
+<script src="advanced-search-tests.js"></script>
 </head>
 <body>
-    <div id="advanced-search-container"></div>
-    <div id="results-container"></div>
+<div id="advanced-search-container"></div>
+<script>
+$(document).ready(function() {
+    if (window.AdvancedSearch) {
+        // Custom success and error callbacks
+        const customSuccessCallback = (message, data) => {
+            console.log("Custom Success: " + message);
+            console.log("Data:", data);
+            // Additional logic to handle the data
+        };
 
-    <script>
-        $(document).ready(function() {
-            AdvancedSearch.init({
-                entities: [
-                    {
-                        name: "User",
-                        attributes: {
-                            id: {type: "integer", rules: ["required", "integer"]},
-                            username: {type: "string", rules: ["required", "string", "maxLength: 255"]},
-                            email: {type: "string", rules: ["required", "string", "email", "maxLength: 255"]},
-                            created_at: {type: "datetime", rules: ["required", "datetime"]}
-                        },
-                        relations: {
-                            posts: {type: "hasMany", model: "Post", foreignKey: "user_id"}
-                        }
+        const customErrorCallback = (message, data) => {
+            console.error("Custom Error: " + message);
+            console.error("Error Data:", data);
+            // Additional logic to handle the error data
+        };
+    
+        window.AdvancedSearch.init({
+            testMode: true, // optional debugger mode, defaults to false
+            runTests: false, // optional test suite execution, defaults to false
+            testIds: [1, 7, 14], // optional, if empty or not informed when runTests flag is on will execute the whole test suite
+            currentEntity: 'User', // optional, if not provided, the first entity found in the array below will be used
+            searchAPI: '/api/advanced-search/query?filter=', // optional, defaults to /api/advanced-search?filter='
+            //successCallback: customSuccessCallback, // optional, if not provided, a default success callback will be invoked if the search result in success
+            //errorCallback: customErrorCallback, // optional, if not provided, a default success callback will be invoked if the search result in a fail
+            entities: [
+                {
+                    "name": "User",
+                    "attributes": {
+                        "id": {"type": "integer", "rules": ["required", "integer"]},
+                        "username": {"type": "string", "rules": ["required", "string", "maxLength: 255"]},
+                        "email": {"type": "string", "rules": ["required", "string", "email", "maxLength: 255"]},
+                        "password": {"type": "string", "rules": ["required", "string", "minLength: 8"]},
+                        "created_at": {"type": "datetime", "rules": ["required", "datetime"]},
+                        "updated_at": {"type": "datetime", "rules": ["datetime"]}
                     },
-                    {
-                        name: "Post",
-                        attributes: {
-                            id: {type: "integer", rules: ["required", "integer"]},
-                            title: {type: "string", rules: ["required", "string", "maxLength: 255"]},
-                            content: {type: "text", rules: ["required"]},
-                            created_at: {type: "datetime", rules: ["required", "datetime"]}
-                        },
-                        relations: {
-                            user: {type: "belongsTo", model: "User", foreignKey: "user_id"},
-                            comments: {type: "hasMany", model: "Comment", foreignKey: "post_id"}
-                        }
-                    },
-                    {
-                        name: "Comment",
-                        attributes: {
-                            id: {type: "integer", rules: ["required", "integer"]},
-                            content: {type: "text", rules: ["required"]},
-                            created_at: {type: "datetime", rules: ["required", "datetime"]}
-                        },
-                        relations: {
-                            post: {type: "belongsTo", model: "Post", foreignKey: "post_id"}
-                        }
+                    "relations": {
+                        "posts": {"type": "hasMany", "model": "Post", "foreignKey": "user_id"}
                     }
-                ],
-                searchAPI: '/api/advanced-search',
-                testMode: true,
-                successCallback: (message, data) => {
-                    console.log("Search successful:", message);
-                    displayResults(data);
                 },
-                errorCallback: (message, data) => {
-                    console.error("Search failed:", message);
-                    alert("An error occurred while searching. Please try again.");
+                {
+                    "name": "Post",
+                    "attributes": {
+                        "id": {"type": "integer", "rules": ["required", "integer"]},
+                        "user_id": {"type": "integer", "rules": ["required", "integer"]},
+                        "title": {"type": "string", "rules": ["required", "string", "maxLength: 255"]},
+                        "content": {"type": "text", "rules": ["required"]},
+                        "created_at": {"type": "datetime", "rules": ["required", "datetime"]},
+                        "updated_at": {"type": "datetime", "rules": ["datetime"]}
+                    },
+                    "relations": {
+                        "user": {"type": "belongsTo", "model": "User", "foreignKey": "user_id"},
+                        "comments": {"type": "hasMany", "model": "Comment", "foreignKey": "post_id"}
+                    }
+                },
+                {
+                    "name": "Comment",
+                    "attributes": {
+                        "id": {"type": "integer", "rules": ["required", "integer"]},
+                        "post_id": {"type": "integer", "rules": ["required", "integer"]},
+                        "author": {"type": "string", "rules": ["required", "string", "maxLength: 255"]},
+                        "content": {"type": "text", "rules": ["required"]},
+                        "created_at": {"type": "datetime", "rules": ["required", "datetime"]},
+                        "updated_at": {"type": "datetime", "rules": ["datetime"]}
+                    },
+                    "relations": {
+                        "post": {"type": "belongsTo", "model": "Post", "foreignKey": "post_id"}
+                    }
                 }
-            });
-
-            function displayResults(data) {
-                let html = '<h2>Search Results</h2><ul>';
-                data.forEach(item => {
-                    html += `<li>${item.username} - ${item.email}</li>`;
-                });
-                html += '</ul>';
-                $('#results-container').html(html);
-            }
+            ],
+            advancedSearchContainer: '#advanced-search-container', // optional, use this to customize the container place for the Advanced Search html
+            // optional, use this to customize the Advanced Search default html, below is the default html just for exemplification
+            customHTML: `
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search...">
+                    <span id="help-icon">❓</span>
+                </div>
+                <div class="button-group">
+                    <button id="search-button" class="action-button">Search</button>
+                    <button id="clear-button" class="action-button">Clear Query</button>
+                </div>
+                <div id="help-container">
+                    <p>Help content goes here...</p>
+                </div>
+            `
         });
-    </script>
+    }
+});
+</script>
 </body>
 </html>
 ```
