@@ -36,6 +36,8 @@ Read the [Comprehensive Feature Guide](https://github.com/Maykonn/Advanced-Searc
 - [Benefits](#-Benefits)
 - [Contributing](#-Contributing)
 - [License](#-License)
+- [Support](#-Support)
+- [Acknowledgements](#-Acknowledgements)
 
 ## 📦 Installation
 Include the necessary files in your HTML:
@@ -71,7 +73,6 @@ $(document).ready(function() {
     });
 });
 ```
-
 ## ⚙️ Configuration
 | Option | Type | Default | Description | Example |
 |--------|------|---------|-------------|---------|
