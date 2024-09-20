@@ -4,7 +4,7 @@
 The Advanced Search Input package is a powerful tool designed to enhance the search capabilities of web applications. It provides users with an intuitive and flexible way to create complex searches without requiring technical knowledge. Whether you're building an e-commerce platform, a content management system, or a complex enterprise application, this package offers a sophisticated search solution adaptable to your unique needs.
 
 ## 🚀 Key Features
-**Read the [Comprehensive Feature Guide](#https://github.com/Maykonn/Advanced-Search-Input/blob/master/PRODUCT.md) for detailed non-technical documentation**
+Read the [Comprehensive Feature Guide](#https://github.com/Maykonn/Advanced-Search-Input/blob/master/PRODUCT.md) for detailed non-technical documentation
 
 ### FOR USERS
 - **Smart Search Bar**: Effortlessly build complex queries in a single input field
