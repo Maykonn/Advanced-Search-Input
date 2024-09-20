@@ -26,7 +26,7 @@ Read the [Comprehensive Feature Guide](https://github.com/Maykonn/Advanced-Searc
 ## 📚 Table of Contents
 - [Installation](#-Installation)
 - [Basic Setup](#-Basic-Setup)
-- [Configuration](#-Configuration)
+- [Configuration](#%EF%B8%8F-configuration)
 - [Detailed Feature Guide](#-Detailed-Feature-Guide)
 - [Customization](#-Customization)
 - [API Integration](#-API-Integration)
